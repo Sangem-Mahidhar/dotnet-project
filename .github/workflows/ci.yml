@@ -6,7 +6,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name : checkout code
-              uses : actions/ckeckout@v7
+              uses : actions/checkout@v7
             - name: setup.NET
               uses: actions/setup-dotnet@v6
               with:
