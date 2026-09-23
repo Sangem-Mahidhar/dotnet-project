@@ -12,12 +12,7 @@ jobs:
               with:
                 dotnet-version: 10.0.x
             - name: Restore Dependencies
-              run: |
-                cd netflix\project
-                dotnet restore
+              run: dotnet restore "netflix project/netflix project.slnx"
             - name: Build
-              run: |
-                cd netflix\project
-                dotnet build
-
+              run: dotnet restore "netflix project/netflix project.slnx"
               
