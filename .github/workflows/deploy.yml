@@ -31,7 +31,7 @@ jobs:
                 cd netflix project/netflix project
                 dotnet publish -c Release -o ./deployment
             - name : deploy to azure web apply
-              uses : azure/webapps-deplloy@v2
+              uses : azure/webapps-deploy@v2
               with:
                   app-name : Netflix-App-2001
                   package : ./deployment
