@@ -14,5 +14,5 @@ jobs:
             - name: Restore Dependencies
               run: dotnet restore "netflix project/netflix project.slnx"
             - name: Build
-              run: dotnet restore "netflix project/netflix project.slnx"
+              run: dotnet build "netflix project/netflix project.slnx"
               
