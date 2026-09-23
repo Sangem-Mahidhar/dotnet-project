@@ -1,0 +1,23 @@
+name: Build_dotnet_app
+on:
+    workflow_dispatch
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name : checkout code
+              uses : actions/ckeckout@v7
+            - name: setup.NET
+              uses: actions/setup-dotnet@v6
+              with:
+                dotnet-version: 10.0.x
+            - name: Restore Dependencies
+              run: |
+                cd netflix project
+                dotnet restore
+            - name: Build
+              run: |
+                cd netflix project
+                dotnet build
+
+              
