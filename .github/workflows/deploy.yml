@@ -42,7 +42,7 @@ jobs:
               uses : azure/webapps-deploy@v2
               with:
                   app-name : Netflix-App-2001
-                  package :"./netflix project/netflix project/deployment"
+                  package: "./netflix project/netflix project/deployment"
 
 
 
