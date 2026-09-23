@@ -1,6 +1,6 @@
 name: deploy-dotnet-project
 on:
-  workflow-dispatch
+    workflow_dispatch:
 jobs:
     deploy:
         runs-on: ubuntu-latest
@@ -15,9 +15,9 @@ jobs:
                 creds : ${{secrets.NF_CREDS}}
             - name : Terraform init
               run : |
-              cd terraform
-              terraform init 
-              terraform apply -auto-approve  
+                cd terraform
+                terraform init 
+                terraform apply -auto-approve  
             - name: setup.NET
               uses: actions/setup-dotnet@v6
               with:
