@@ -10,14 +10,22 @@ jobs:
             - name : setup Terraform
               uses : hashicorp/setup-terraform@v3
             - name : Azure Login
-              uses : azure/login@v1
+              uses : azure/login@v3
               with : 
                 creds : ${{secrets.NF_CREDS}}
             - name : Terraform init
               run : |
                 cd terraform
-                terraform init 
-                terraform apply -auto-approve  
+                terraform init
+            - name : Terraform state list
+              run : |
+                cd terraform
+                terraform state list
+            - name : Terraform Apply
+              run : |
+                cd terraform
+                terraform apply -auto-approve
+
             - name: setup.NET
               uses: actions/setup-dotnet@v6
               with:
@@ -28,13 +36,13 @@ jobs:
               run: dotnet build "netflix project/netflix project.slnx"
             - name : publish
               run : |
-                cd netflix project/netflix project
+                cd "netflix project/netflix project"
                 dotnet publish -c Release -o ./deployment
             - name : deploy to azure web apply
               uses : azure/webapps-deploy@v2
               with:
                   app-name : Netflix-App-2001
-                  package : ./deployment
+                  package :"./netflix project/netflix project/deployment"
 
 
 
