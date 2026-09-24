@@ -21,3 +21,10 @@ variable "APP_Name" {
     type = string
     default = "Netflix-App-2001"
 }
+
+variable "storage_account_name" {
+    description = "name"
+    type = string
+    default = "netflixsa2001"
+  
+}
