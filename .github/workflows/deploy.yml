@@ -21,6 +21,10 @@ jobs:
               run : |
                 cd terraform
                 terraform state list
+            - name: Terraform Import Resource Group
+              run: |
+                 cd terraform
+                 terraform import azurerm_resource_group.rg "/subscriptions/c64e87a7-0ee8-40ab-8a7c-a0cc98c27e01/resourceGroups/NetflixRG"
             - name : Terraform Apply
               run : |
                 cd terraform
